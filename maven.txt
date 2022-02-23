@@ -1,0 +1,105 @@
+##What is maven?
+--Maven is a project management and comprehension tool that provides developers a complete build lifecycle framework.
+
+Maven is an automation and management tool developed by Apache Software Foundation. It is written in Java Language to build projects written in C#, Ruby, Scala, and other languages. It allows developers to create projects, dependency, and documentation using Project Object Model and plugins. It has a similar development process as ANT, but it is more advanced than ANT.
+
+Maven can also build any number of projects into desired output such as jar, war, metadata.Eases the building process for any project.
+
+
+
+##Usage Of Maven
+--
+1.Maven helps the developer to create a java-based project more easily. Accessibility of new feature created or added in Maven can be easily added to a project in Maven configuration. It increases the performance of project and building process.
+
+2.The main feature of Maven is that it can download the project dependency libraries automatically.
+
+3.Eases the building process for any project.
+
+4.It maintains uniformity throughout the entire build process.
+
+5.It’s very important to understand the project that we are working on. It provides comprehensive information about the project.
+
+6.To ensure quality in a project, it’s necessary to develop it in the best possible manner, and It provides the guidelines to do just that.
+
+7.Often in a project, it’s required to migrate to new features, and with it, the migration is simplified.
+
+
+
+
+##How To Create Maven Project
+
+#steps to creat maven project from command prompt
+
+Step 1: Open Run and type ‘cmd‘ to open Command Prompt.
+
+Step 2: Using ‘cd’ command, you have to browse to the folder where you want to set up your project and then type the below command:
+
+mvn archetype:generate -DgroupId=ToolsQA -DartifactId=DemoMavenProject -DarchetypeArtifactId=
+maven-archetype-quickstart -DinteractiveMode=false
+
+Step 3: After successfully building, once go to the project location to see the newly created maven project. Now open the pom.xml file, which resides in the project folder. By default, the POM is generated like this:
+
+Step 4: In the folder structure of the Maven project you can find your DemoMavenProject.
+
+#steps to create maven project from eclipse
+
+Step 1. Access Eclipse IDE and navigate to File > New > Other… This will open a wizard window to create the Maven Project.
+
+Step 2. Look for the Maven folder, expand it, and select the Maven Project and then click Next.
+
+Step 3. ‘Create a simple Project’ option wouldn’t be checked by default. But, in this particular tutorial, we are going to choose this option as it would help to create simple Maven-Java project. If you are looking to set up advanced settings, then don’t check this option and continue, you’ll see various advanced options. Well, as we are going by the ‘Create a simple project’ option, then click the corresponding checkbox and then click Next.
+
+Step 4. Now, you will see a new window will open to configure the project. There you need to provide some required information for the Maven project. You need to provide information about the ‘Artifact’, ‘Parent Project’ Information and some other Advanced settings. Here we are go enter information about Artifact like ‘Group Id’, ‘Artifact Id’, ‘Version’, ‘Packaging’, ‘Name’ etc. In order to get a better understanding of the naming conversions of these attributes.
+
+Step 5. Now, you will see that your project has been created in the left panel in eclipse under ‘Project Explorer‘. There you’ll see 4 major packages, 2 holds the ‘Main Java’ code and resources which are ‘/src/main/java’ and ‘/src/main/resources’ respectively while rest 2 belongs to ‘Test Java’ code and resources which are ‘/src/main/java’ and ‘/src/main/resources’ respectively.
+
+Step 6. Let’s open the pom.xml file to see what information it is holding up. In this file, you can see the information entered in previous steps about the Project like ‘Group Id’, ‘Artifact Id’ and other information.
+
+
+
+##Commands in the maven and use of each command
+
+1.Mvn –version: This command helps us in knowing the current version of Maven that is installed
+
+2.MVN package: This command is used to execute all Maven phases until the package phase. It does the job of compiling, verifying and building the project. It builds the jar file and places it in the specified folder under the specified project.
+
+3.mvn clean install: This maven command helps in executing a clean build life cycle and installs build phase in the default build cycle. This build life cycles may have its build phases and inside each build, there are different build goals. Also, this ensures that the build target is being removed for a new build and adds the clean target.
+
+4.mvn compile: This command is used to compile the source code. It also compiles the classes that are stored at a particular target or class.
+
+5.mvn test: Maven also provides the facility of unit testing particular codes. It runs the tests using suitable
+
+6.maven.javadoc.skip :This command is used to skip the generation and packaging of any specified Javadoc jar file.
+
+
+
+
+##Maven Life Cycle
+--when you ran the maven install command we have asked me when to execute a life cycle phase maven has multiple lifecycle phases starting from process resources compile test package and many more for brevity reasons I have skipped some
+phases in between as well as after package when you execute a maven package maven will run all the phases prior to
+it and then that particular phase if you run the test it will run process
+
+--resources first then compile then the test phase we as developers can execute maven package and we need not specify maven process resources space compile
+space test 10 space package each phase life cycle phase is associated with one or more goals for example the process resources is associated with a resources plugins resources goal this is the one which does the actual work the phases
+are something maven internally knows but they don't do any work on their own they are simply a part of the life cycle
+
+--actual work is done by the plugin goals associated with those phases we can have multiple goals associated with a face but usually there is only one goal the
+compile phase is associated with a compiler plugins compiler goal test with surefire test goal surefire is the plugin which can run the test package
+jar colon jar and so on when you execute a particular goal instead of giving Maven install you can also say maven
+
+--
+space surefire colon test maven will then execute all the phases before the phase with which this goal is associated surefire test is associated with the test phase so maven will execute process resources and its associated goals
+compile its associated goal and then finally it will execute the surefire test code similarly if you execute jar all the phases prior to it will be executed and their
+associated goals will be executed then the jar goal will be executed depending
+
+--space surefire colon test maven will then execute all the phases before the phase with which this goal is associated surefire test is associated with the test phase so maven will execute process resources and its associated goals
+compile its associated goal and then finally it will execute the surefire test code similarly if you execute jar all the phases prior to it will be executed and their
+associated goals will be executed then the jar goal will be executed depending
+
+--on the type of the project the association might change if you are building a stand-alone java project the package phase can be associated with
+jar colon  jar and if it is a web application project maven dynamically associates it with a war colon war goal
+as a developer once you know that this is how the phases and goals work you can work on any java project developed by
+any other team and easily build it.
+
+
+
